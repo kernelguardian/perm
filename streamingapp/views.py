@@ -11,7 +11,7 @@ from streamingapp.models import StreamHelper
 def updateCount(request):
     # print(request.user.get_all_permissions())
 
-    if request.user.has_perm('streamingapp.view_streamhelper'):
+    if request.user.has_perm('randoPerm'):
         print("has permission")
     else:
         print("has no permission")
@@ -21,10 +21,8 @@ def updateCount(request):
         'auth': str(request.auth),  # None
         "perm": str(request.user.get_all_permissions())
     }
+
     stream, _ = StreamHelper.objects.get_or_create(user=request.user)
-    print(_)
-    if _ is True:
-        print("Created new obj")
     if _ is False:
         stream.count = stream.count + 1
         stream.save()
