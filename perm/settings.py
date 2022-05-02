@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_APPS = INSTALLED_APPS + ['streamingapp','rest_framework']
+INSTALLED_APPS = INSTALLED_APPS + \
+    ['streamingapp', 'rest_framework', 'casbin_resolverApp']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
